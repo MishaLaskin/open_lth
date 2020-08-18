@@ -112,7 +112,7 @@ def run_at_step(step1, callback):
 
 # The standard set of callbacks that should be used for a normal training run.
 def standard_callbacks(training_hparams: hparams.TrainingHparams, train_set_loader: DataLoader,
-                       test_set_loader: DataLoader, eval_on_train: bool = False, verbose: bool = True,
+                       test_set_loader: DataLoader, eval_on_train: bool = True, verbose: bool = True,
                        start_step: Step = None, evaluate_every_epoch: bool = True):
     start = start_step or Step.zero(train_set_loader.iterations_per_epoch)
     end = Step.from_str(training_hparams.training_steps, train_set_loader.iterations_per_epoch)
